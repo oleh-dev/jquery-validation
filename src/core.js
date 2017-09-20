@@ -489,6 +489,10 @@ $.extend( $.validator, {
 				// Add aria-invalid status for screen readers
 				$( element ).attr( "aria-invalid", !rs );
 			}
+            /* my code */
+            if ( this.settings.afterElementValidate ) {
+                this.settings.afterElementValidate.call( this, element, result);
+            }
 
 			return result;
 		},
